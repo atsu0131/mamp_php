@@ -13,7 +13,11 @@ try {
   $stmt->bindValue(1, $id, PDO::PARAM_INT);
   $stmt->execute();
   $result = $stmt->fetch(PDO::FETCH_ASSOC);
-  
+  echo "料理" . $result['recipe_name'] . "<br>\n";
+  echo "カテゴリ" . $result['category'] . "<br>\n";
+  echo "予算" . $result['budget'] . "<br>\n";
+  echo "難易度" . $result['difficulty'] . "<br>\n";
+  echo "作り方" . $result['howto'] . "<br>\n";
   $dbh = null;
 } catch (Exception $e) {
   echo "エラー発生" . htmlspecialchars($e->getMessage(),
